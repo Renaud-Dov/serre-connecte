@@ -1,4 +1,4 @@
-# 80:EA:CA:89:5F:EA
+
 
 from miflora.miflora_poller import MiFloraPoller
 from btlewrap.bluepy import BluepyBackend
@@ -30,7 +30,7 @@ def times(x):
         print(x-loop)
         time.sleep(1)
     print()
-for i in range (10):
+for i in range (100):
 
    
 # print(captor.valeurs())#,poller.fetch_history())
@@ -39,4 +39,4 @@ for i in range (10):
 # print()
 # print(captor.is_ropot())
     print(time.time(),captor.test())
-    times(5)
+    times(3)
