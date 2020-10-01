@@ -1,4 +1,4 @@
-![GitHub](https://img.shields.io/github/license/Renaud-Dov/serre-connecte)
+![GitHub](https://img.shields.io/badge/license-GNU3-orange)
 
 **Smart greenhouse**
 =====
