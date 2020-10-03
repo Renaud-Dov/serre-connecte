@@ -1,0 +1,22 @@
+{
+    "Arduino": {
+        "port": "/dev/ttyACM0",
+        "baudrate": 9600
+    },
+    "Led": {
+        "port": 17
+    },
+    "captors": {
+        "MAC": "80:EA:CA:89:5F:EA"
+    },
+    "Dipoles": {
+        "valve": {
+            "open": false,
+            "pin": 12
+        },
+        "fenetre1": {
+            "open": false,
+            "pin": 10
+        }
+    }
+}

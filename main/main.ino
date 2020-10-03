@@ -1,7 +1,10 @@
 #include <Arduino_JSON.h>
 #include <JSON.h>
 #include <JSONVar.h>
-#
+#include <Stepper.h>
+ 
+Stepper motor(64, 9, 11, 10, 8);  
+ 
 
 void setup() {
   Serial.begin(9600);
@@ -10,14 +13,14 @@ void setup() {
 
 JSONVar jsontext(String data){
   JSONVar myArray = JSON.parse(data);
-  return
+  return myArray;
 }
 
 void loop() {
   if (Serial.available() > 0) {
     String data = Serial.readStringUntil('\n');
 
-    JSONVar myArray = jsontext(data)
+    JSONVar myArray = jsontext(data);
     Serial.print(myArray);
     Serial.println(myArray["type"]);
     if ((int) myArray["type"]>=10)
@@ -26,7 +29,7 @@ void loop() {
     }
 
     // jsontext(data);
-    if (data=="moteur")
+    if ((String) myArray["type"]=="moteur")
     {
       /* code */
     }
