@@ -35,6 +35,7 @@ You need these library
 ```bash
 $ sudo apt-get install libglib2.0-dev
 $ pip3 install bluepy miflora
+$ pip3 install bluepy
 ```
 
 ## Configuration

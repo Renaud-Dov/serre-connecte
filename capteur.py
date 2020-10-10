@@ -8,7 +8,7 @@ class Capteur(MiFloraPoller):
         self.fill_cache()
         if self.cache_available() and (len(self._cache) == 16):
             print(len(self._cache),self.cache_available())
-            return self.parse_data()
+            return self._parse_data()
     def batterie(self):
         self.battery_level()
     def nameCapteur(self):

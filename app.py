@@ -16,13 +16,22 @@ class app():
         self.main()
 
     def main(self):
-        b={"type":"moteur"}
-        self.arduino.send(json.dumps(b))
-        pass
+        # b={"type":"fenetre","val":int}
+        for i in range(10):
+            if i%2==0:
+                b={"type":"fenetre","val":2048}
+            else:
+                b={"type":"fenetre","val":-2048}
+            print(i)
+            self.send(b)
+            # time.sleep(3000)
+            print("num suivant")
 
     def getVal(self):
-        # self.capteur
-        pass
+        return self.capteur.valeurs()
+
+    def send(self,data:dict):
+        self.arduino.send(json.dumps(data))
 
 if __name__ == '__main__':
     if not os.path.exists('config.json'):
@@ -34,5 +43,5 @@ if __name__ == '__main__':
     arduino=serialConnection.Arduino(config["Arduino"]["port"],config["Arduino"]["baudrate"])
     capteur=capteur.Capteur(config["captors"]["MAC"])
     # ledR=LED(config["Led"]["port"])
-    print(capteur.valeurs())
+    # print(capteur.valeurs())
     app(arduino,capteur)
